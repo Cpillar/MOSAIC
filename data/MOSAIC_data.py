@@ -24,7 +24,7 @@ TYPE_GROUPS = {
 class Sample:
     sequence: str
     detect_label: int
-    type_label: int  # -100 when not applicable
+    type_label: int
     multi_class_label: int
     dataset_id: int
     species_id: int

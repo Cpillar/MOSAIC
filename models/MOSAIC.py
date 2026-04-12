@@ -92,7 +92,6 @@ class DNABert2PromptBinaryMoE(pl.LightningModule):
         self._configure_base(trainable_base_layers)
 
     def _configure_base(self, trainable_layers: Optional[int]) -> None:
-        # trainable_layers=None => keep default (train all); >=0 => freeze all then unfreeze last N
         if trainable_layers is None:
             return
         for param in self.encoder.parameters():
@@ -127,7 +126,7 @@ class DNABert2PromptBinaryMoE(pl.LightningModule):
         gating_probs = torch.softmax(gating_logits, dim=-1)
 
         if self.top_k is not None and self.top_k < self.num_experts:
-            topk_values, topk_indices = torch.topk(gating_probs, self.top_k, dim=-1)
+            _, topk_indices = torch.topk(gating_probs, self.top_k, dim=-1)
             mask = gating_probs.new_zeros(gating_probs.shape)
             mask.scatter_(1, topk_indices, 1.0)
             gating_probs = gating_probs * mask

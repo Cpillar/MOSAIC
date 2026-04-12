@@ -1,7 +1,7 @@
 {
   "config": "configs\\MOSAIC.yaml",
   "checkpoint": "checkpoints\\MOSAIC_model.ckpt",
-  "generated_at": "2026-04-12T06:53:00.233356+00:00",
+  "generated_at": "2026-04-12T07:01:08.053593+00:00",
   "overall": {
     "ACC": 0.9021799457326097,
     "MCC": 0.8043600937339667,

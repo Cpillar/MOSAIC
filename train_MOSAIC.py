@@ -9,8 +9,8 @@ import torch
 import yaml
 from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
 
-from data.datamodule import MultiTaskMethylationDataModule
-from models.dnabert2_moe_prompt_binary import DNABert2PromptBinaryMoE, PromptBinaryLossWeights
+from data.MOSAIC_data import MultiTaskMethylationDataModule
+from models.MOSAIC import DNABert2PromptBinaryMoE, PromptBinaryLossWeights
 from utils.class_weights import inverse_frequency_weights
 from utils.seed import set_seed
 

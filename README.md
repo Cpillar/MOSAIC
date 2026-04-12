@@ -11,7 +11,9 @@ This folder contains the packaged training, evaluation, and inference code for t
 - `checkpoints/MOSAIC_model.ckpt`: best trained MOSAIC checkpoint.
 - `hf_models/DNABERT-2-117M/`: local DNABERT-2 backbone files required by MOSAIC.
 - `datasets/`: processed train/test benchmark splits used by the released code.
-- `data/`, `models/`, `utils/`: Python modules required by the release scripts.
+- `data/MOSAIC_data.py`: released data module for the processed benchmark.
+- `models/MOSAIC.py`: released MOSAIC architecture definition.
+- `utils/`: helper modules required by the release scripts.
 - `requirements.txt`: Python package dependencies used for this release.
 
 ## Environment

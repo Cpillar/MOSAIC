@@ -9,8 +9,8 @@ from typing import Any, Dict, List
 import torch
 import yaml
 
-from data.datamodule import MultiTaskMethylationDataModule, TYPE_GROUPS
-from models.dnabert2_moe_prompt_binary import DNABert2PromptBinaryMoE, PromptBinaryLossWeights
+from data.MOSAIC_data import MultiTaskMethylationDataModule, TYPE_GROUPS
+from models.MOSAIC import DNABert2PromptBinaryMoE, PromptBinaryLossWeights
 from utils.class_weights import inverse_frequency_weights
 from utils.seed import set_seed
 
