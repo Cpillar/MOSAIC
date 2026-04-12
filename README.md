@@ -1,24 +1,36 @@
-# MOSAIC Release
+# MOSAIC
 
-This folder contains the packaged training, evaluation, and inference code for the released MOSAIC model, together with the processed benchmark datasets, the local DNABERT-2 backbone files, and the best trained checkpoint renamed to `MOSAIC_model.ckpt`.
+MOSAIC is a prompt-aware mixture-of-experts framework for cross-species and cross-modification DNA methylation prediction. It combines a shared DNABERT-2 backbone with sparse expert routing conditioned on methylation type and species prompts, allowing the model to preserve strong predictive performance while retaining biologically structured transfer across heterogeneous datasets.
 
-## Contents
+Many methylation benchmarks are highly imbalanced: a small number of head datasets dominate training, while many low-resource datasets remain much harder to model well. In this setting, a method should not only improve average predictive performance, but also avoid concentrating those gains on already favorable tasks. MOSAIC is designed for that setting. In addition to benchmark-level accuracy, it targets fairer task-level behavior across datasets with different methylation types, species backgrounds, and sample sizes.
+
+![MOSAIC architecture](docs/mosaic_architecture.svg)
+
+## Live web server
+
+For users who only need online inference, MOSAIC is also available through a public web interface:
+
+- [MOSAIC Web Server](https://ycclab.cuhk.edu.cn/MOSAIC/index.php)
+
+This release package focuses on the released model, processed datasets, and local training / evaluation / inference scripts.
+
+## Release contents
 
 - `train_MOSAIC.py`: training entry point for the released MOSAIC configuration.
-- `evaluate_MOSAIC.py`: evaluation script that reports overall, per-dataset, and per-type metrics.
+- `evaluate_MOSAIC.py`: evaluation script for overall, per-dataset, and per-type metrics.
 - `infer_MOSAIC.py`: inference script for single-sequence or batch CSV prediction.
-- `configs/MOSAIC.yaml`: released model configuration without seed-specific naming.
+- `configs/MOSAIC.yaml`: released model configuration.
 - `checkpoints/MOSAIC_model.ckpt`: best trained MOSAIC checkpoint.
 - `hf_models/DNABERT-2-117M/`: local DNABERT-2 backbone files required by MOSAIC.
-- `datasets/`: processed train/test benchmark splits used by the released code.
-- `data/MOSAIC_data.py`: released data module for the processed benchmark.
+- `datasets/`: processed benchmark train/test splits and `summary.csv`.
+- `data/MOSAIC_data.py`: released data module.
 - `models/MOSAIC.py`: released MOSAIC architecture definition.
-- `utils/MOSAIC_utils.py`: packaged helper functions for reproducibility and class weighting.
-- `requirements.txt`: Python package dependencies used for this release.
+- `utils/MOSAIC_utils.py`: helper functions used by the release code.
+- `requirements.txt`: Python package dependencies for the released pipeline.
 
 ## Environment
 
-Python 3.10+ is recommended.
+Python `3.10+` is recommended.
 
 Install dependencies:
 
@@ -26,29 +38,23 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-For GPU usage, install the PyTorch build that matches your CUDA environment if the default `torch==2.6.0` wheel is not appropriate.
+If your environment requires a different CUDA-specific PyTorch build, install the matching `torch` wheel manually before running the scripts.
 
 ## Training
-
-Run:
 
 ```bash
 python train_MOSAIC.py --config configs/MOSAIC.yaml
 ```
 
-The released training code no longer exposes a seed-specific file name. Internally, a fixed seed of `42` is used for deterministic splitting and dataloader reproducibility.
-
-Training outputs are written under `outputs/train/`.
+Training outputs are written to `outputs/train/`.
 
 ## Evaluation
-
-Run:
 
 ```bash
 python evaluate_MOSAIC.py --config configs/MOSAIC.yaml --checkpoint checkpoints/MOSAIC_model.ckpt
 ```
 
-The JSON report is written to `outputs/eval/`.
+Evaluation outputs are written to `outputs/eval/`.
 
 ## Inference
 
@@ -68,20 +74,20 @@ ATCGATCGATCGATCGATCGATCGATCGATCGATCGA,A.thaliana,6mA
 GCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCG,H.sapiens,5hmC
 ```
 
-Run:
+Then run:
 
 ```bash
 python infer_MOSAIC.py --input-csv examples/inference_example.csv --output-csv outputs/inference_results.csv
 ```
 
-The inference script returns the binary prediction probabilities and the routed Top-K experts with their weights.
+The inference script reports methylation probabilities together with the routed Top-K experts and their routing weights.
 
 ## Processed datasets
 
-The packaged benchmark keeps only the processed `train.csv` and `test.csv` splits for each dataset, together with `datasets/summary.csv`. Auxiliary baseline feature files used elsewhere in the development repo are intentionally excluded from this release package.
+This release keeps only the processed `train.csv` and `test.csv` splits for each dataset, together with `datasets/summary.csv`. Development-time auxiliary baseline features are intentionally excluded from the release package.
 
 ## Notes
 
-- Supported task values are `4mC`, `5hmC`, and `6mA`.
-- Species names must match the released benchmark vocabulary. The inference script validates them against the packaged datasets.
+- Supported methylation tasks are `4mC`, `5hmC`, and `6mA`.
+- Species names must match the released benchmark vocabulary.
 - The released checkpoint was renamed from the internal training artifact to `MOSAIC_model.ckpt` for clarity.
