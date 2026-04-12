@@ -11,8 +11,7 @@ from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
 
 from data.MOSAIC_data import MultiTaskMethylationDataModule
 from models.MOSAIC import DNABert2PromptBinaryMoE, PromptBinaryLossWeights
-from utils.class_weights import inverse_frequency_weights
-from utils.seed import set_seed
+from utils.MOSAIC_utils import inverse_frequency_weights, set_seed
 
 
 DEFAULT_SEED = 42

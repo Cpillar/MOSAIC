@@ -13,7 +13,7 @@ This folder contains the packaged training, evaluation, and inference code for t
 - `datasets/`: processed train/test benchmark splits used by the released code.
 - `data/MOSAIC_data.py`: released data module for the processed benchmark.
 - `models/MOSAIC.py`: released MOSAIC architecture definition.
-- `utils/`: helper modules required by the release scripts.
+- `utils/MOSAIC_utils.py`: packaged helper functions for reproducibility and class weighting.
 - `requirements.txt`: Python package dependencies used for this release.
 
 ## Environment
