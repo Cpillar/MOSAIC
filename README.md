@@ -4,7 +4,7 @@ MOSAIC is a prompt-aware mixture-of-experts framework for cross-species and cros
 
 Many methylation benchmarks are highly imbalanced: a small number of head datasets dominate training, while many low-resource datasets remain much harder to model well. In this setting, a method should not only improve average predictive performance, but also avoid concentrating those gains on already favorable tasks. MOSAIC is designed for that setting. In addition to benchmark-level accuracy, it targets fairer task-level behavior across datasets with different methylation types, species backgrounds, and sample sizes.
 
-![MOSAIC architecture](docs/mosaic_architecture.svg)
+![MOSAIC architecture](docs/mosaic_architecture.png)
 
 ## Live web server
 
