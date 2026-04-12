@@ -1,0 +1,35 @@
+model_name: hf_models/DNABERT-2-117M
+learning_rate: 2.0e-5
+weight_decay: 0.01
+warmup_ratio: 0.05
+max_epochs: 6
+gradient_accumulation_steps: 1
+train_batch_size: 96
+eval_batch_size: 192
+max_length: 41
+use_middle_token_only: false
+loss_weights:
+  classify: 1.0
+  gating: 0.3
+dataset:
+  root: datasets
+  groups: ["4mC", "5hmC", "6mA"]
+  num_workers: 8
+  val_ratio: 0.05
+  type_sampling_weights: [1.0, 6.0, 1.0]
+  sampler_class_probs: [0.25, 0.25, 0.30, 0.20]
+trainer:
+  precision: 16-mixed
+  devices: 1
+  accelerator: auto
+  val_check_interval: 1.0
+  enable_checkpointing: true
+  enable_progress_bar: false
+  log_every_n_steps: 10
+paths:
+  output_dir: outputs/train
+  checkpoint_dir: outputs/train/checkpoints
+moe:
+  lora_rank: 16
+  lora_dropout: 0.1
+  top_k: 4
