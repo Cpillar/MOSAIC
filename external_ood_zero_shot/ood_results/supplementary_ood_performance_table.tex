@@ -1,0 +1,14 @@
+\begin{table*}[t]
+\centering
+\caption{Zero-shot external OOD performance measured by MCC. Public baseline results were obtained by aggregating predictions across the available source-model inventory for each external target. For MOSAIC, the reported values follow the paper-facing protocol used in Fig.~\ref{fig:ood_zero_shot}a: the fixed 5hmC surrogate prompt for 5mC / \textit{H.sapiens}, and the mean prompt aggregate for 6mA / \textit{O.sativa} and 4mC / \textit{E.coli}.}
+\label{tab:ood_supplementary_mcc}
+\begin{tabular}{lrrrrr}
+\toprule
+Dataset & SNNRice & ENet & UniMethylNet & Other avg & MOSAIC \\
+\midrule
+5mC / \textit{H.sapiens} & 0.273 & 0.044 & 0.060 & 0.126 & 0.279 \\
+6mA / \textit{O.sativa} & 0.524 & -0.005 & 0.481 & 0.333 & 0.553 \\
+4mC / \textit{E.coli} & 0.561 & -0.173 & 0.343 & 0.244 & 0.532 \\
+\bottomrule
+\end{tabular}
+\end{table*}

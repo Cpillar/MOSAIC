@@ -95,7 +95,7 @@ The directory `external_ood_zero_shot/` contains the three paper-facing external
 - `6mA / O.sativa`
 - `4mC / E.coli`
 
-It also includes a prompt-sweep inference example that can be run directly with `infer_MOSAIC.py`. The paper-level zero-shot OOD metrics are not bundled in the release branch and can be regenerated locally from the released checkpoint and the included external datasets.
+It also includes a prompt-sweep inference example that can be run directly with `infer_MOSAIC.py`, together with a compact supplementary MCC table under `external_ood_zero_shot/ood_results/`. Full intermediate zero-shot benchmark artifacts are not bundled in the release branch and can be regenerated locally from the released checkpoint and the included external datasets.
 
 ## Notes
 
