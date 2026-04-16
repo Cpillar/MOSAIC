@@ -23,7 +23,7 @@ This release package focuses on the released model, processed datasets, and loca
 - `checkpoints/MOSAIC_model.ckpt`: best trained MOSAIC checkpoint.
 - `hf_models/DNABERT-2-117M/`: local DNABERT-2 backbone files required by MOSAIC.
 - `datasets/`: processed benchmark train/test splits and `summary.csv`.
-- `external_ood_zero_shot/`: three released external OOD datasets, zero-shot metrics, comparison summaries, and a prompt-sweep inference example.
+- `external_ood_zero_shot/`: three released external OOD datasets and a prompt-sweep inference example.
 - `data/MOSAIC_data.py`: released data module.
 - `models/MOSAIC.py`: released MOSAIC architecture definition.
 - `utils/MOSAIC_utils.py`: helper functions used by the release code.
@@ -95,7 +95,7 @@ The directory `external_ood_zero_shot/` contains the three paper-facing external
 - `6mA / O.sativa`
 - `4mC / E.coli`
 
-It also includes the corresponding MOSAIC zero-shot metrics, the comparison summaries against public single-dataset baselines, and a prompt-sweep inference example that can be run directly with `infer_MOSAIC.py`.
+It also includes a prompt-sweep inference example that can be run directly with `infer_MOSAIC.py`. The paper-level zero-shot OOD metrics are not bundled in the release branch and can be regenerated locally from the released checkpoint and the included external datasets.
 
 ## Notes
 

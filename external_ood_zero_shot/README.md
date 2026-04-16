@@ -1,6 +1,6 @@
 # External OOD Zero-Shot Bundle
 
-This bundle contains the three paper-facing external datasets used for MOSAIC zero-shot out-of-distribution (OOD) evaluation, together with the corresponding MOSAIC zero-shot metrics and the baseline comparison summaries.
+This bundle contains the three paper-facing external datasets used for MOSAIC zero-shot out-of-distribution (OOD) evaluation.
 
 ## Included external datasets
 
@@ -19,17 +19,9 @@ Each dataset directory contains:
 
 The file `manifest.csv` records the released three-dataset inventory.
 
-## Included zero-shot results
+## Released contents
 
-- `results/mosaic/<dataset_name>/metrics.json`
-  - MOSAIC zero-shot prompt-sweep metrics for the corresponding external dataset
-  - includes per-prompt metrics and aggregate metrics
-- `results/compare_single_zero_shot/other_vs_mosaic_summary.csv`
-  - paper-facing comparison table between MOSAIC and the public single-dataset baselines
-- `results/compare_single_zero_shot/other_vs_mosaic_summary.json`
-  - JSON version of the same summary
-- `results/compare_single_zero_shot/per_model_summary.csv`
-  - per-baseline external results under the same evaluation protocol
+The release branch includes the external datasets and a prompt-sweep inference example. Paper-level zero-shot metrics and comparison tables are intentionally not bundled here and should be regenerated locally from the released checkpoint if needed.
 
 ## How to run OOD-style prediction
 
@@ -58,7 +50,7 @@ The output CSV will contain:
 - routed Top-K experts
 - routing weights
 
-To reproduce the full paper-level OOD benchmark, use the external `test.csv` files in this bundle and aggregate the prompt-level outputs according to the paper protocol described in `results/mosaic/*/metrics.json`.
+To reproduce the full paper-level OOD benchmark, use the external `test.csv` files in this bundle together with the released checkpoint, and aggregate the prompt-level outputs according to the zero-shot OOD protocol described in the manuscript.
 
 ## Sources
 
