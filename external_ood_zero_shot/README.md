@@ -21,7 +21,7 @@ The file `manifest.csv` records the released three-dataset inventory.
 
 ## Released contents
 
-The release branch includes the external datasets, a prompt-sweep inference example, and a compact supplementary MCC table under `ood_results/`. Full intermediate benchmark artifacts are not bundled here.
+The release branch includes the external datasets, a prompt-sweep inference example, and a compact supplementary OOD results table under `ood_results/`. Full intermediate benchmark artifacts are not bundled here.
 
 ## How to run OOD-style prediction
 
