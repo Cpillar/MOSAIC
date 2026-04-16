@@ -1,0 +1,48 @@
+{
+  "other_definition": "Mean MCC of SNNRice, ENet, UniMethylNet under single-dataset binary zero-shot evaluation.",
+  "selection_policy": {
+    "H.sapiens_promoter_BERT5mC": "train on 5hmC/5hmC_H.sapiens as the closest seen human dataset",
+    "O.sativa_Rice_Chen": "train on 6mA/A.thaliana as the largest seen plant 6mA dataset",
+    "E.coli_Li2020": "train on 4mC/4mC_F.vesca as the largest seen 4mC dataset"
+  },
+  "models": [
+    "SNNRice",
+    "ENet",
+    "UniMethylNet"
+  ],
+  "datasets": [
+    {
+      "dataset_name": "H.sapiens_promoter_BERT5mC",
+      "setting": "same species, unseen type",
+      "training_dataset": "5hmC/5hmC_H.sapiens",
+      "selection_rule": "closest seen human dataset",
+      "mosaic_mcc": 0.24801179725238784,
+      "other_mean_mcc": 0.22741594764694484,
+      "SNNRice": 0.33189678084579527,
+      "ENet": 0.15913796731806315,
+      "UniMethylNet": 0.1912130947769761
+    },
+    {
+      "dataset_name": "O.sativa_Rice_Chen",
+      "setting": "same type, unseen species",
+      "training_dataset": "6mA/A.thaliana",
+      "selection_rule": "largest seen plant 6mA dataset",
+      "mosaic_mcc": 0.5525939302172915,
+      "other_mean_mcc": 0.3240905944134376,
+      "SNNRice": 0.5262128141041296,
+      "ENet": -0.05057074066651599,
+      "UniMethylNet": 0.4966297098026994
+    },
+    {
+      "dataset_name": "E.coli_Li2020",
+      "setting": "same type, unseen species",
+      "training_dataset": "4mC/4mC_F.vesca",
+      "selection_rule": "largest seen 4mC dataset",
+      "mosaic_mcc": 0.5321937427120916,
+      "other_mean_mcc": 0.09512359480053001,
+      "SNNRice": 0.3030457633656632,
+      "ENet": -0.22056438662814234,
+      "UniMethylNet": 0.2028894076640692
+    }
+  ]
+}

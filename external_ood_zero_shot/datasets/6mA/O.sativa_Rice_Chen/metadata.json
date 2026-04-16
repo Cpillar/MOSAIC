@@ -1,0 +1,17 @@
+{
+  "dataset_name": "O.sativa_Rice_Chen",
+  "species": "O.sativa",
+  "methylation_type": "6mA",
+  "ood_axis": "unseen_species",
+  "sequence_length": 41,
+  "positive_count": 880,
+  "negative_count": 880,
+  "source_paper": "https://academic.oup.com/bioinformatics/article/35/16/2796/5280727",
+  "source_repo": "https://github.com/yuht4/SNNRice6mA",
+  "raw_source": [
+    "external data/6mA/O.sativa_Rice_Chen/raw/Positive.txt",
+    "external data/6mA/O.sativa_Rice_Chen/raw/Negative.txt"
+  ],
+  "normalized_csv": "external data/6mA/O.sativa_Rice_Chen/test.csv",
+  "notes": "Rice_Chen benchmark mirrored from the public SNNRice6mA repository; originally attributed to Chen et al. (2019)."
+}

@@ -1,0 +1,17 @@
+{
+  "dataset_name": "E.coli_Li2020",
+  "species": "E.coli",
+  "methylation_type": "4mC",
+  "ood_axis": "unseen_species",
+  "sequence_length": 41,
+  "positive_count": 126,
+  "negative_count": 126,
+  "source_paper": "https://academic.oup.com/bioinformatics/article/38/23/5160/6751781",
+  "source_repo": "https://github.com/LIU-CT/MSNet-4mC",
+  "raw_source": [
+    "external data/4mC/E.coli_Li2020/raw/Escherichia_coli-test-P.txt",
+    "external data/4mC/E.coli_Li2020/raw/Escherichia_coli-test-N.txt"
+  ],
+  "normalized_csv": "external data/4mC/E.coli_Li2020/test.csv",
+  "notes": "Li_2020 4mC benchmark mirrored from the official MSNet-4mC repository; E.coli is absent from the MOSAIC 4mC training inventory."
+}

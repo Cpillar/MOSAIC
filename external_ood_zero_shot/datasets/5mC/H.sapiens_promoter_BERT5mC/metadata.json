@@ -1,0 +1,14 @@
+{
+  "dataset_name": "H.sapiens_promoter_BERT5mC",
+  "species": "H.sapiens",
+  "methylation_type": "5mC",
+  "ood_axis": "unseen_type",
+  "sequence_length": 41,
+  "positive_count": 13950,
+  "negative_count": 164715,
+  "source_paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10712318/",
+  "source_repo": "https://github.com/sgrwang/BERT-5mC",
+  "raw_source": "compare/AutoFE-research-master/AutoFE-research-master/DataSets/5mC_all_data.csv",
+  "normalized_csv": "external data/5mC/H.sapiens_promoter_BERT5mC/test.csv",
+  "notes": "Human promoter 5mC benchmark mirrored from a local AutoFE bundle; only official test rows were retained for external OOD evaluation."
+}
