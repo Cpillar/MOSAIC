@@ -1,4 +1,4 @@
-dataset_name,setting,training_dataset,selection_rule,mosaic_mcc,other_mean_mcc,SNNRice,ENet,UniMethylNet
-H.sapiens_promoter_BERT5mC,"same species, unseen type",5hmC/5hmC_H.sapiens,closest seen human dataset,0.24801179725238784,0.22741594764694484,0.33189678084579527,0.15913796731806315,0.1912130947769761
-O.sativa_Rice_Chen,"same type, unseen species",6mA/A.thaliana,largest seen plant 6mA dataset,0.5525939302172915,0.3240905944134376,0.5262128141041296,-0.05057074066651599,0.4966297098026994
-E.coli_Li2020,"same type, unseen species",4mC/4mC_F.vesca,largest seen 4mC dataset,0.5321937427120916,0.09512359480053001,0.3030457633656632,-0.22056438662814234,0.2028894076640692
+dataset_name,setting,training_dataset,selection_rule,mosaic_mcc,other_mean_mcc
+H.sapiens_promoter_BERT5mC,"same species, unseen type",5hmC/5hmC_H.sapiens,closest seen human dataset,0.24801179725238784,0.22741594764694484
+O.sativa_Rice_Chen,"same type, unseen species",6mA/A.thaliana,largest seen plant 6mA dataset,0.5525939302172915,0.3240905944134376
+E.coli_Li2020,"same type, unseen species",4mC/4mC_F.vesca,largest seen 4mC dataset,0.5321937427120916,0.09512359480053001
