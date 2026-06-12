@@ -23,7 +23,8 @@ This release package focuses on the released model, processed datasets, and loca
 - `checkpoints/MOSAIC_model.ckpt`: best trained MOSAIC checkpoint.
 - `hf_models/DNABERT-2-117M/`: local DNABERT-2 backbone files required by MOSAIC.
 - `datasets/`: processed benchmark train/test splits and `summary.csv`.
-- `external_ood_zero_shot/`: three released external OOD datasets and a prompt-sweep inference example.
+- `external_ood_zero_shot/`: six released external OOD datasets and a prompt-sweep inference example.
+- `simulated_imbalance_tests/`: packaged 1:5 and 1:10 simulated imbalance stress-test datasets.
 - `data/MOSAIC_data.py`: released data module.
 - `models/MOSAIC.py`: released MOSAIC architecture definition.
 - `utils/MOSAIC_utils.py`: helper functions used by the release code.
@@ -89,13 +90,18 @@ This release keeps only the processed `train.csv` and `test.csv` splits for each
 
 ## External OOD bundle
 
-The directory `external_ood_zero_shot/` contains the three paper-facing external datasets used for zero-shot OOD evaluation:
+The directory `external_ood_zero_shot/` contains the six paper-facing external datasets used for zero-shot OOD evaluation:
 
 - `5mC / H.sapiens`
-- `6mA / O.sativa`
-- `4mC / E.coli`
+- `6mA / O.sativa` from two external benchmark sources
+- `4mC / E.coli` from two external benchmark sources
+- `4mC / G.pickeringii`
 
 It also includes a prompt-sweep inference example that can be run directly with `infer_MOSAIC.py`, together with a compact supplementary OOD results table under `external_ood_zero_shot/ood_results/`. Full intermediate zero-shot benchmark artifacts are not bundled in the release branch and can be regenerated locally from the released checkpoint and the included external datasets.
+
+## Simulated imbalance stress-test bundle
+
+The directory `simulated_imbalance_tests/` contains the packaged 1:5 and 1:10 simulated imbalance test sets used for the revised benchmark stress test. The original balanced benchmark splits under `datasets/` are unchanged. The stress-test bundle retains the original test positives and adds same-species central-base genome-candidate sequences treated as unreported for methylation.
 
 ## Notes
 

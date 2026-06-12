@@ -1,0 +1,13 @@
+{
+  "dataset_name": "E.coli_Zhao2022",
+  "species": "E.coli",
+  "methylation_type": "4mC",
+  "ood_axis": "unseen_species",
+  "sequence_length": 41,
+  "positive_count": 388,
+  "negative_count": 388,
+  "source_repo": "https://github.com/Zhixun-Zhao/4mCPrediction",
+  "normalized_csv": "external_ood_zero_shot/datasets/4mC/E.coli_Zhao2022/test.csv",
+  "notes": "Zhao 4mC E.coli benchmark used as an expanded OOD dataset; E.coli is absent from the MOSAIC 4mC training inventory.",
+  "source_paper": "https://github.com/Zhixun-Zhao/4mCPrediction"
+}

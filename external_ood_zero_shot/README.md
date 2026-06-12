@@ -1,6 +1,6 @@
 # External OOD Zero-Shot Bundle
 
-This bundle contains the three paper-facing external datasets used for MOSAIC zero-shot out-of-distribution (OOD) evaluation.
+This bundle contains the six paper-facing external datasets used for MOSAIC zero-shot out-of-distribution (OOD) evaluation.
 
 ## Included external datasets
 
@@ -9,7 +9,14 @@ This bundle contains the three paper-facing external datasets used for MOSAIC ze
   - official independent-test partition only
 - `datasets/6mA/O.sativa_Rice_Chen/`
   - same-type, unseen-species setting
+- `datasets/6mA/O.sativa_Rice_Lv/`
+  - same-type, unseen-species setting
+  - large external OOD dataset
 - `datasets/4mC/E.coli_Li2020/`
+  - same-type, unseen-species setting
+- `datasets/4mC/E.coli_Zhao2022/`
+  - same-type, unseen-species setting
+- `datasets/4mC/G.pickeringii_Zhao2022/`
   - same-type, unseen-species setting
 
 Each dataset directory contains:
@@ -17,7 +24,7 @@ Each dataset directory contains:
 - `test.csv`: normalized MOSAIC-compatible external test file with columns `id,sequence,label`
 - `metadata.json`: source paper, source repository, OOD axis, and dataset-level counts
 
-The file `manifest.csv` records the released three-dataset inventory.
+The file `manifest.csv` records the released six-dataset inventory.
 
 ## Released contents
 
@@ -56,4 +63,6 @@ To reproduce the full paper-level OOD benchmark, use the external `test.csv` fil
 
 - Human 5mC benchmark: BERT-5mC
 - Rice 6mA benchmark: i6mA-Pred / SNNRice6mA public benchmark mirror
+- Rice 6mA benchmark: MGF6mARice Rice_Lv benchmark
 - *E.coli* 4mC benchmark: MSNet-4mC / Li_2020 test benchmark
+- Expanded bacterial 4mC benchmarks: 4mCPrediction / Zhao benchmark datasets

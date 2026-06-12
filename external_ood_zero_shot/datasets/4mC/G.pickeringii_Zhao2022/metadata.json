@@ -1,0 +1,13 @@
+{
+  "dataset_name": "G.pickeringii_Zhao2022",
+  "species": "G.pickeringii",
+  "methylation_type": "4mC",
+  "ood_axis": "unseen_species",
+  "sequence_length": 41,
+  "positive_count": 569,
+  "negative_count": 569,
+  "source_repo": "https://github.com/Zhixun-Zhao/4mCPrediction",
+  "normalized_csv": "external_ood_zero_shot/datasets/4mC/G.pickeringii_Zhao2022/test.csv",
+  "notes": "Zhao 4mC G.pickeringii benchmark used as an expanded OOD dataset; G.pickeringii is absent from the MOSAIC 4mC training inventory.",
+  "source_paper": "https://github.com/Zhixun-Zhao/4mCPrediction"
+}

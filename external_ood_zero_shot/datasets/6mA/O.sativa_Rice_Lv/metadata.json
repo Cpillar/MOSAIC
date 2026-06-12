@@ -1,0 +1,13 @@
+{
+  "dataset_name": "O.sativa_Rice_Lv",
+  "species": "O.sativa",
+  "methylation_type": "6mA",
+  "ood_axis": "unseen_species",
+  "sequence_length": 41,
+  "positive_count": 153618,
+  "negative_count": 153618,
+  "source_repo": "https://github.com/zhlSunLab/MGF6mARice",
+  "normalized_csv": "external_ood_zero_shot/datasets/6mA/O.sativa_Rice_Lv/test.csv",
+  "notes": "Large Rice_Lv 6mA benchmark used as an expanded OOD dataset; O.sativa is absent from the MOSAIC 6mA training inventory.",
+  "source_paper": "https://github.com/zhlSunLab/MGF6mARice"
+}
